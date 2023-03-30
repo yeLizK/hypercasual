@@ -90,6 +90,7 @@ public class GameManager : MonoBehaviour
     }
     private void Lose()
     {
+        score = 0;
         InfoText.text = "You LOSE!";
         EndGame();
     }

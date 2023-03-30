@@ -20,10 +20,10 @@ public class Curtain : MonoBehaviour
         {
             fillAmount -= Time.deltaTime * 0.05f;
             CurtainObject.fillAmount = fillAmount;
-            if(fillAmount>0.6f)
+            if(fillAmount>0.66f)
             {
                 GameManager.Instance.score = 50;
-            }else if(fillAmount > 0.3)
+            }else if(fillAmount > 0.33)
             {
                 GameManager.Instance.score = 40;
             }else if(fillAmount > 0){
