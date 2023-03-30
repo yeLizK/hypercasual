@@ -34,8 +34,8 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-        referenceObjectPosition = new Vector3(-2.75f, 4.16f, 13f);
-        score = 50;
+        referenceObjectPosition = new Vector3(-2.47f, 3.43f, 12.46f);
+        score = 0;
     }
     private void Update()
     {
@@ -59,7 +59,6 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
-
     }
 
     public void ChooseAReferenceChar()
@@ -69,7 +68,7 @@ public class GameManager : MonoBehaviour
             Destroy(ReferenceObjectParent.GetChild(0).gameObject);
         }
         int index = Random.Range(0, references.ReferenceCharList.Count);
-        ReferenceObject =Instantiate(references.ReferenceCharList[index], referenceObjectPosition, Quaternion.identity);
+        ReferenceObject =Instantiate(references.ReferenceCharList[index], referenceObjectPosition, Quaternion.Euler(new Vector3(0,180f,0)));
         ReferenceObject.transform.parent = ReferenceObjectParent;
     }
 
@@ -90,7 +89,6 @@ public class GameManager : MonoBehaviour
     }
     private void Lose()
     {
-        score = 0;
         InfoText.text = "You LOSE!";
         EndGame();
     }
@@ -101,4 +99,8 @@ public class GameManager : MonoBehaviour
         EndGame();
     }
 
+    public void AddScore(int additionalAmount)
+    {
+        score += additionalAmount;
+    }
 }

@@ -7,20 +7,26 @@ public class CharMovement : MonoBehaviour
 {
     private NavMeshAgent navMeshAgent;
     private Vector3 destination;
+    private Animator CharAnim;
 
     private void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        CharAnim = GetComponent<Animator>();
         StartCoroutine(AssignRandomDestination());
     }
 
     private void Update()
     {
-        if(Vector3.Distance(transform.position,destination)<0.5f)
+        if(GameManager.Instance.isGameOn)
         {
-            StartCoroutine(AssignRandomDestination());
-        }
+            if (Vector3.Distance(transform.position, destination) < 0.5f)
+            {
+                StartCoroutine(AssignRandomDestination());
+            }
             navMeshAgent.destination = destination;
+
+        }
     }
 
     private IEnumerator AssignRandomDestination()

@@ -7,6 +7,7 @@ public class Curtain : MonoBehaviour
     private Image CurtainObject;
     private float fillAmount;
     public bool isGameOn;
+    private int currentScore;
 
     private void Start()
     {
@@ -22,15 +23,17 @@ public class Curtain : MonoBehaviour
             CurtainObject.fillAmount = fillAmount;
             if(fillAmount>0.66f)
             {
-                GameManager.Instance.score = 50;
+                currentScore = 50;
             }else if(fillAmount > 0.33)
             {
-                GameManager.Instance.score = 40;
-            }else if(fillAmount > 0){
-                GameManager.Instance.score = 25;
+                currentScore = 40;
             }
-            else{
-                GameManager.Instance.score = 10;
+            else if(fillAmount > 0){
+                currentScore = 25;
+            }
+            else
+            {
+                currentScore = 10;
             }
         }
     }
@@ -41,6 +44,8 @@ public class Curtain : MonoBehaviour
     }
     public void EndGame()
     {
+        CurtainObject.fillAmount = 0f;
+        GameManager.Instance.AddScore(currentScore);
         fillAmount = 1f;
         isGameOn = false;
     }

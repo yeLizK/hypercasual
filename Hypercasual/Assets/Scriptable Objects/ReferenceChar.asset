@@ -13,5 +13,15 @@ MonoBehaviour:
   m_Name: ReferenceChar
   m_EditorClassIdentifier: 
   ReferenceCharList:
-  - {fileID: 5082980295977683571, guid: 9fbf0caa5d2e9e84383d5a08df11718a, type: 3}
-  - {fileID: 5705560065180510061, guid: 7a3b8b65b4e45c245b3760f1abca7823, type: 3}
+  - {fileID: 1648133914161170, guid: 1d6afb82d032d784baa00d2648d374fc, type: 3}
+  - {fileID: 1510283987989466, guid: ccd938941ed826942a371e256c78b337, type: 3}
+  - {fileID: 1757511809330272, guid: 698a468778da34a48a32e51a10ba0e22, type: 3}
+  - {fileID: 1482116209498294, guid: 1f348159326a5744aad162c043db974a, type: 3}
+  - {fileID: 1968300598627574, guid: 63692f3a391a131419520d83b22a9d04, type: 3}
+  - {fileID: 1700402788579272, guid: be2db70eace895a47b6fac4fdabe0a49, type: 3}
+  - {fileID: 1354723837573992, guid: e803fb9c43ac6ff40b6e4aacfa02484d, type: 3}
+  - {fileID: 1748058136884126, guid: 53f81dba5504ee84681251c82d87f89c, type: 3}
+  - {fileID: 1735533565651860, guid: acc1851bf21eec746b40e82d0677c56c, type: 3}
+  - {fileID: 1715303990188238, guid: 351341f3aeabd8b44b2aacc1adb8fcd3, type: 3}
+  - {fileID: 1743764086227728, guid: d39a69fcc1030074c97f8b2486cf69a6, type: 3}
+  - {fileID: 1047707254348002, guid: e0176e7c6aaec894584651b6512fd2ab, type: 3}
