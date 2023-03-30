@@ -14,11 +14,13 @@ public class GameManager : MonoBehaviour
     public GameObject ReferenceObject;
     public Transform ReferenceObjectParent;
     public int score;
-    public bool isGameOn;
+    public bool isGameOn,isLose;
+
+    private int currentScore;
 
     //Panels
     public GameObject StartGamePanel;
-    public TMP_Text InfoText, ScoreText;
+    public TMP_Text InfoText, ScoreText, InGameScoreText;
 
     private void Awake()
     {
@@ -36,6 +38,7 @@ public class GameManager : MonoBehaviour
     {
         referenceObjectPosition = new Vector3(-2.47f, 3.43f, 12.46f);
         score = 0;
+        currentScore = 0;
     }
     private void Update()
     {
@@ -78,17 +81,25 @@ public class GameManager : MonoBehaviour
         isGameOn = true;
         ChooseAReferenceChar();
         curtainObject.StartGame();
+        InGameScoreText.text = "Score:" + currentScore;
     }
 
     public void EndGame()
     {
         isGameOn = false;
         curtainObject.EndGame();
+        if(isLose)
+        {
+            score = 0;
+        }
         ScoreText.text = score.ToString();
         StartGamePanel.SetActive(true);
+        currentScore +=score;
+        isLose = false;
     }
     private void Lose()
     {
+        isLose = true;
         InfoText.text = "You LOSE!";
         EndGame();
     }
