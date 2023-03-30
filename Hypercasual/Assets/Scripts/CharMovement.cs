@@ -20,7 +20,7 @@ public class CharMovement : MonoBehaviour
     {
         if(GameManager.Instance.isGameOn)
         {
-            if (Vector3.Distance(transform.position, destination) < 0.5f)
+            if (Vector3.Distance(transform.position, destination) < 0.7f)
             {
                 StartCoroutine(AssignRandomDestination());
             }

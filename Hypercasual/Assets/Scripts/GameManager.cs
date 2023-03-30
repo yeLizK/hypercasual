@@ -95,6 +95,7 @@ public class GameManager : MonoBehaviour
         ScoreText.text = score.ToString();
         StartGamePanel.SetActive(true);
         currentScore +=score;
+        score = 0;
         isLose = false;
     }
     private void Lose()
