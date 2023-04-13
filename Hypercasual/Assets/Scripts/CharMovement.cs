@@ -20,7 +20,7 @@ public class CharMovement : MonoBehaviour
     {
         if(GameManager.Instance.isGameOn)
         {
-            if (Vector3.Distance(transform.position, destination) < 0.7f)
+            if (Vector3.Distance(transform.position, destination) < 1f)
             {
                 StartCoroutine(AssignRandomDestination());
             }
@@ -34,5 +34,6 @@ public class CharMovement : MonoBehaviour
         yield return new WaitForSeconds(4f);
         float tempXPos = Random.Range(-3.6f, 3.6f);
         float tempZPos = Random.Range(13f, 26f);
-        destination = new Vector3(tempXPos, -7f, tempZPos);    }
+        destination = new Vector3(tempXPos, -7f, tempZPos);    
+    }
 }
